@@ -1,0 +1,46 @@
+/* mixins for same section styles multiple time */
+@mixin banner{
+	width: 100%;
+	position: relative;
+	color:white;
+
+	img{
+		width: 100%;
+	}
+
+	.banner-content{
+		position: absolute;
+		top: 50px;
+		width: 100%;
+	}
+
+	span{
+		font-size: $bannerHeading;
+		display: block;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	span.title{
+		font-weight: normal;
+		margin-bottom: 30px;
+	}
+}
+
+@mixin clearfix{
+	&:after{
+		clear:both;
+		display: block;
+		content: "";
+	}
+}
+
+@mixin grid($cols, $mgn){
+  float: left;
+  width: ((100% - (($cols - 1) * $mgn)) / $cols );
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  &:nth-child(#{$cols}n){
+    margin-right: 0;
+  }
+}
